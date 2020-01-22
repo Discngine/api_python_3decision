@@ -14,8 +14,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def get_session(settings):
     session = Session(settings)
     if session.auth_type == 'on_prem':
+        print('Connecting to 3decision... (On Prem)')
         session.on_prem_authentication()    
-    else:        
+    else:
+        print('Connecting to 3decision... (Cloud)')
         session.cloud_authentication()
     return session
 
