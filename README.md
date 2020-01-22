@@ -36,7 +36,7 @@ Connect to 3decision and go to your user preferences. Open API and generate a ne
 # Example usage
 
 ```python
-from 3decision_python_api import api_3decision as api
+from api_python_3decision import api_3decision as api
 
 response=api.get_structure('1uyd')
 api.post_structure('pathtoarchive.zip')
