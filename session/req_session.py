@@ -22,7 +22,7 @@ def get_session(settings):
    
 class Session():
     
-    base_url       = str
+    api_base_url   = str
     x_api_secret   = str
     mail           = str
     auth_type      = str
@@ -41,7 +41,7 @@ class Session():
     get_project_id_endpoint = '/project/:name/ids'
     
     def __init__(self, settings):
-        self.base_url       = settings['base_url']
+        self.api_base_url   = settings['base_url'] + settings['api_path']
         self.auth_type      = settings['auth_type']
         self.mail           = settings['mail']
         if self.auth_type == 'on_prem':
@@ -53,7 +53,7 @@ class Session():
         
     def on_prem_authentication(self):
         response = self.req.post(
-                url = self.base_url + self.login_endpoint,
+                url = self.api_base_url + self.login_endpoint,
                 verify=self.verifySSL,
                 data = {'username':self.user},
                 auth = requests.auth.HTTPBasicAuth(self.user, self.password)
@@ -67,7 +67,7 @@ class Session():
     def cloud_authentication(self):
         print('Generating token ...')
         response = self.req.get(
-            url = self.base_url + self.token_endpoint, 
+            url = self.api_base_url + self.token_endpoint, 
             headers = {'x-api-secret' : self.x_api_secret}
         )
         response_json = response.json()
