@@ -43,5 +43,7 @@ api.post_structure('pathtoarchive.zip')
 response=api.get_project_id('My New Project')
 ```
 
-# Post Structure Endpoint
+# Endpoints
+## Post Structure Endpoint
 In order to register one or several structures you can use the post_structure function. You should specify a zip file containing all information required for such an upload. More information on how the specifications of that zip file can be found in the (3decision API documentation here)[https://discngine.github.io/3decision-api-doc/v2/POST%20Structure%20Documentation.pdf]. 
+You can also download a (sample zip file)[https://github.com/Discngine/api_python_3decision/blob/master/examples/post_structure.zip] to get you started.
