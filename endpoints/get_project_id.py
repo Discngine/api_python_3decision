@@ -2,7 +2,7 @@
 """
 Created on Tue Jan 21 16:53:17 2020
 
-@author: RaphaëlBerthier
+@author: 3decision
 """
 
 def __get_project_id__(session, project_name : str):

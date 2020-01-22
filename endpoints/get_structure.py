@@ -2,7 +2,7 @@
 """
 Created on Mon Jan 20 18:11:19 2020
 
-@author: RaphaëlBerthier
+@author: 3decision
 """
 
 def __get_structure__(session, code : str):

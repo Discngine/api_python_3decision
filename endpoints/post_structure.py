@@ -2,7 +2,7 @@
 """
 Created on Mon Jan 20 15:08:26 2020
 
-@author: RaphaëlBerthier
+@author: 3decision
 """
 
 def __post_structure__(session, archive_path : str):

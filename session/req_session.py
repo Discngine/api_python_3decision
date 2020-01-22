@@ -2,7 +2,7 @@
 """
 Created on Tue Jan 21 11:23:39 2020
 
-@author: RaphaëlBerthier
+@author: 3decision
 """
 
 import requests
