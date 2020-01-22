@@ -21,6 +21,7 @@ Here an example to access the 3decision public cloud server:
     }
 ```
 
+Note, only for on-prem installations you need to provide your password. Specify an email address if you want to get notified with details on the progress of longer structure registration jobs (POST structure endpoint).
 
 
 # Example usage
