@@ -1,4 +1,4 @@
-# 3decision_python_api
+# api_python_3decision
 This is a small python wrapper for the 3decision REST API. Feel free to use it if you want. Else you can find a full documentation of the current official (3decision REST API here)[https://app.swaggerhub.com/apis/3decision/3decision/1.0.0#/]
 
 # Set up
@@ -36,7 +36,7 @@ More (documentation)[https://discngine.github.io/3decision-api-doc/v2/3decision%
 # Example usage
 
 ```python
-from api_python_3decision import api_3decision as api
+from api_python_3decision import api
 
 response=api.get_structure('1uyd')
 api.post_structure('pathtoarchive.zip')
