@@ -10,7 +10,7 @@ def __post_structure__(session, archive_path : str):
     try:
         with open(archive_path, 'rb') as archive:
             response = session.req.post(
-                url         = session.base_url + session.post_structure_endpoint,
+                url         = session.api_base_url + session.post_structure_endpoint,
                 files       = {'file' : ('post-structure.zip', archive, 'application/zip')},
                 data        = {'mail' : session.mail}
             )

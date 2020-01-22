@@ -7,7 +7,7 @@ Created on Tue Jan 21 16:53:17 2020
 
 def __get_project_id__(session, project_name : str):
     session.check_token_expiration()
-    url = session.base_url + session.get_project_id_endpoint
+    url = session.api_base_url + session.get_project_id_endpoint
     url = url.replace(':name', project_name)
     response = session.req.get(url)
     if response.status_code != 200:

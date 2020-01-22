@@ -7,7 +7,7 @@ Created on Mon Jan 20 18:11:19 2020
 
 def __get_structure__(session, code : str):
     session.check_token_expiration()
-    url = session.base_url + session.get_structure_endpoint
+    url = session.api_base_url + session.get_structure_endpoint
     url = url.replace(':code', code)
     response = session.req.get(url)
     if response.status_code != 200:
