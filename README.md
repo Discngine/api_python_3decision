@@ -31,7 +31,7 @@ Connect to 3decision and go to your user preferences. Open API and generate a ne
 ![Fill out form](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_3.png "Fill out Form")
 ![Copy key](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_4.png "Copy key")
 
-
+More (documentation)[https://discngine.github.io/3decision-api-doc/v2/3decision%20API%20Secret%20Key%20and%20Token%20Documentation.pdf] on the secret key and token management is available 
 
 # Example usage
 
@@ -44,4 +44,4 @@ response=api.get_project_id('My New Project')
 ```
 
 # Post Structure Endpoint
-In order to register one or several structures you can use the post_structure function. You should specify a zip file containing all information required for such an upload. 
+In order to register one or several structures you can use the post_structure function. You should specify a zip file containing all information required for such an upload. More information on how the specifications of that zip file can be found in the (3decision API documentation here)[https://discngine.github.io/3decision-api-doc/v2/POST%20Structure%20Documentation.pdf]. 
