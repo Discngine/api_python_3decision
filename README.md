@@ -3,7 +3,7 @@ This is a small python wrapper for the 3decision REST API. Feel free to use it i
 
 # Set up
 
-## Access to 3decision
+## Programmatic access to 3decision
 Depending on how you access 3decision, using the public cloud or an on-premises installation you have to get your access token from 3decision and 
 adapt the `settings.py` with your data.
 
@@ -23,6 +23,8 @@ Here an example to access the 3decision public cloud server:
 
 Note, only for on-prem installations you need to provide your password. Specify an email address if you want to get notified with details on the progress of longer structure registration jobs (POST structure endpoint).
 
+### How do I get the API Secret?
+Connect to 3decision and go to your user preferences. 
 
 # Example usage
 
@@ -35,4 +37,4 @@ response=api.get_project_id('My New Project')
 ```
 
 # Post Structure Endpoint
-In order to re
+In order to register one or several structures you can use the post_structure function. You should specify a zip file containing all information required for such an upload. 
