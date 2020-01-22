@@ -4,7 +4,7 @@
 # auth_type =  on_prem
 # base_url, user, mail, password, verifySSL must be defined
 
-# base_url example: https://3decision.discngine.cloud/
+# base_url example: https://3decision.discngine.cloud
 # api_path_example: /api/v2
 
 params = {
