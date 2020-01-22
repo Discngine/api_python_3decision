@@ -24,7 +24,14 @@ Here an example to access the 3decision public cloud server:
 Note, only for on-prem installations you need to provide your password. Specify an email address if you want to get notified with details on the progress of longer structure registration jobs (POST structure endpoint).
 
 ### How do I get the API Secret?
-Connect to 3decision and go to your user preferences. 
+Connect to 3decision and go to your user preferences. Open API and generate a new key. You can set a custom expiration period.
+
+![Click on User Preferences](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_1.png "Click on User Preferences")
+![Open API](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_2.png "Open API")
+![Fill out form](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_3.png "Fill out Form")
+![Copy key](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_4.png "Copy key")
+
+
 
 # Example usage
 
