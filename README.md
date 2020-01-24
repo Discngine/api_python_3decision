@@ -43,7 +43,7 @@ response = api.get_structure_metadata('1uyd')
 response = api.get_structure_ligands('1uyd')
 response = api.post_structure('pathtoarchive.zip')
 response = api.get_project_ids('My New Project')
-response = api.get_ligand_search('excat', 'smiles', 'CCCCn1c(Cc2cc(OC)c(OC)c(OC)c2Cl)nc2c(N)ncnc12')
+response = api.get_ligand_search('exact', 'smiles', 'CCCCn1c(Cc2cc(OC)c(OC)c(OC)c2Cl)nc2c(N)ncnc12')
 ```
 
 # Endpoints
