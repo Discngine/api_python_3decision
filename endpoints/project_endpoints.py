@@ -5,9 +5,10 @@ Created on Tue Jan 21 16:53:17 2020
 @author: 3decision
 """
 
-def __get_project_id__(session, project_name : str):
+def __get_project_ids__(session, project_name : str):
     session.check_token_expiration()
-    url = session.api_base_url + session.get_project_id_endpoint
+    get_project_id_endpoint = '/project/:name/ids'
+    url = session.api_base_url + get_project_id_endpoint
     url = url.replace(':name', project_name)
     response = session.req.get(url)
     if response.status_code != 200:

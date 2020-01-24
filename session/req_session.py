@@ -38,9 +38,6 @@ class Session():
     
     token_endpoint = '/token'
     login_endpoint = '/login'
-    post_structure_endpoint = '/structure'
-    get_structure_endpoint = '/structure/:code/metadata'
-    get_project_id_endpoint = '/project/:name/ids'
     
     def __init__(self, settings):
         self.api_base_url   = settings['base_url'] + settings['api_path']
