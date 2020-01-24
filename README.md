@@ -39,9 +39,11 @@ More (documentation)[https://discngine.github.io/3decision-api-doc/v2/3decision%
 ```python
 from api_python_3decision import api
 
-response=api.get_structure('1uyd')
-api.post_structure('pathtoarchive.zip')
-response=api.get_project_id('My New Project')
+response = api.get_structure_metadata('1uyd')
+response = api.get_structure_ligands('1uyd')
+response = api.post_structure('pathtoarchive.zip')
+response = api.get_project_ids('My New Project')
+response = api.get_ligand_search('exact', 'smiles', 'CCCCn1c(Cc2cc(OC)c(OC)c(OC)c2Cl)nc2c(N)ncnc12')
 ```
 
 # Endpoints
