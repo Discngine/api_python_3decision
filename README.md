@@ -14,7 +14,7 @@ Here an example to access the 3decision public cloud server:
     params = {
         'base_url'      : 'https://3decision.discngine.cloud',
         'auth_type'     : 'cloud',
-        'x_api_secret'  : 'myFancySecretKeyIgotFrom3decision',
+        'x_api_secret'  : 'myFancySecretKeyIgotFrom3decisionForCloudAuthentication',
         'mail'          : 'my_mail@mail.com',
         'user'          : 'myUsername',
         'password'      : 'passwordForOnPremInstallationsOnly',
@@ -23,6 +23,7 @@ Here an example to access the 3decision public cloud server:
 ```
 
 Note, only for on-prem installations you need to provide your password. Specify an email address if you want to get notified with details on the progress of longer structure registration jobs (POST structure endpoint).
+For cloud authentication, you will need to generate an API Secret Key.
 
 ### How do I get the API Secret?
 Connect to 3decision and go to your user preferences. Open API and generate a new key. You can set a custom expiration period.
@@ -32,18 +33,32 @@ Connect to 3decision and go to your user preferences. Open API and generate a ne
 ![Fill out form](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_3.png "Fill out Form")
 ![Copy key](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_4.png "Copy key")
 
-More (documentation)[https://discngine.github.io/3decision-api-doc/v2/3decision%20API%20Secret%20Key%20and%20Token%20Documentation.pdf] on the secret key and token management is available 
+More (documentation)[https://discngine.github.io/3decision-api-doc/v2/3decision%20API%20Secret%20Key%20and%20TokenDocumentation.pdf] on the secret key and token management is available 
 
 # Example usage
 
 ```python
 from api_python_3decision import api
 
+# Structure endpoints:
+
+response = api.get_structure('1uyd')
 response = api.get_structure_metadata('1uyd')
 response = api.get_structure_ligands('1uyd')
+response = api.reanalyze_structure('1uyd')
 response = api.post_structure('pathtoarchive.zip')
+response = api.delete_structure('structureCodeIWantToDelete')
+
+# Project endpoints:
+
 response = api.get_project_ids('My New Project')
+project_id = 1
+response = api.get_project(project_id)
+
+# Ligand endpoints
 response = api.get_ligand_search('exact', 'smiles', 'CCCCn1c(Cc2cc(OC)c(OC)c(OC)c2Cl)nc2c(N)ncnc12')
+
+
 ```
 
 # Endpoints

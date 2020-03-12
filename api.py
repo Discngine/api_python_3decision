@@ -30,8 +30,8 @@ def reanalyze_structure(code: str):
 def post_structure(archive : str):
     return e.structure_endpoints._post_structure(session, archive)
 
-def delete_structure(archive : str):
-    return e.structure_endpoints._delete_structure(session, archive)
+def delete_structure(code : str):
+    return e.structure_endpoints._delete_structure(session, code)
     
 
 # Project Endpoints
