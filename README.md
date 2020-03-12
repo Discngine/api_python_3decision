@@ -1,5 +1,5 @@
 # Python 3decision REST API Wrapper
-This is a small python wrapper for the 3decision REST API. Feel free to use it if you want. Else you can find a full documentation of the current official (3decision REST API here)[https://app.swaggerhub.com/apis/3decision/3decision/1.0.0#/]
+This is a small python wrapper for the 3decision REST API. Feel free to use it if you want. Else you can find a full documentation of the current official (3decision REST API here)[https://app.swaggerhub.com/apis/3decision/3decision]
 
 # Set up
 Clone this repository to your computer. Make sure the path to this folder is available in your python path so you can load the module, and install the packages specified in the requirements.txt file
