@@ -2,7 +2,7 @@
 This is a small python wrapper for the 3decision REST API. Feel free to use it if you want. Else you can find a full documentation of the current official (3decision REST API here)[https://app.swaggerhub.com/apis/3decision/3decision/1.0.0#/]
 
 # Set up
-Clone this repository to your computer. Make sure the path to this folder is available in your python path so you can load the module. 
+Clone this repository to your computer. Make sure the path to this folder is available in your python path so you can load the module, and install the packages specified in the requirements.txt file
 
 ## Programmatic access to 3decision
 Depending on how you access 3decision, using the public cloud or an on-premises installation you have to get your access token from 3decision and 
