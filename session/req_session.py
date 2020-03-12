@@ -69,9 +69,9 @@ class Session():
             url = self.api_base_url + self.token_endpoint, 
             headers = {'x-api-secret' : self.x_api_secret}
         )
-        response_json = response.json()
-        status_code = response.status_code
+        status_code = response.status_code     
         if (status_code == 200):
+            response_json = response.json()
             data = response_json['data']
             self.token = data['token']
             curr_date = datetime.now()
@@ -80,7 +80,8 @@ class Session():
             self.req.headers['Authorization'] = 'Bearer ' + self.token
             print('New token generated.')
         else:
-            raise Exception('Could not get token')
+            print('Failed authentication.\nResponse status code: ' + str(status_code) + '\n')
+            raise Exception('Could not generate token')
     
     def check_token_expiration(self):
         if self.auth_type == 'cloud':
@@ -91,3 +92,7 @@ class Session():
                     self.cloud_authentication()
             else:
                 self.cloud_authentication()
+                
+    def print_error_message(self, response):
+        error = response.json()['error']
+        print('\nError message:\t\t' + error['message'] + '\n' + 'Status Code:\t\t' + str(error['code']) + '\n' + 'Type:\t\t\t' + error['type'] + '\n')
