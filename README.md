@@ -1,5 +1,5 @@
 # Python 3decision REST API Wrapper
-This is a small python wrapper for the 3decision REST API. Feel free to use it if you want. Else you can find a full documentation of the current official (3decision REST API here)[https://app.swaggerhub.com/apis-docs/3decision/3decision/1.0.0]
+This is a small python wrapper for the 3decision REST API. Feel free to use it if you want. Else you can find a full documentation of the current official [3decision REST API here](https://app.swaggerhub.com/apis-docs/3decision/3decision/1.0.0)
 
 # Set up
 Clone this repository to your computer. Make sure the path to this folder is available in your python path so you can load the module, and install the packages specified in the requirements.txt file
@@ -33,7 +33,7 @@ Connect to 3decision and go to your user preferences. Open API and generate a ne
 ![Fill out form](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_3.png "Fill out Form")
 ![Copy key](https://github.com/Discngine/api_python_3decision/blob/master/images/3dec_screen_4.png "Copy key")
 
-More (documentation)[https://discngine.github.io/3decision-api-doc/v2/3decision%20API%20Secret%20Key%20and%20TokenDocumentation.pdf] on the secret key and token management is available 
+More [documentation](https://discngine.github.io/3decision-api-doc/v2/3decision%20API%20Secret%20Key%20and%20TokenDocumentation.pdf) on the secret key and token management is available 
 
 # Example usage
 
@@ -63,5 +63,5 @@ response = api.get_ligand_search('exact', 'smiles', 'CCCCn1c(Cc2cc(OC)c(OC)c(OC)
 
 # Endpoints
 ## Post Structure Endpoint
-In order to register one or several structures you can use the post_structure function. You should specify a zip file containing all information required for such an upload. More information on how the specifications of that zip file can be found in the (3decision API documentation here)[https://discngine.github.io/3decision-api-doc/v2/POST%20Structure%20Documentation.pdf]. 
-You can also download a (sample zip file)[https://github.com/Discngine/api_python_3decision/blob/master/examples/post_structure.zip] to get you started.
+In order to register one or several structures you can use the post_structure function. You should specify a zip file containing all information required for such an upload. More information on how the specifications of that zip file can be found in the [3decision API documentation here](https://discngine.github.io/3decision-api-doc/v2/POST%20Structure%20Documentation.pdf). 
+You can also download a [sample zip file](https://github.com/Discngine/api_python_3decision/blob/master/examples/post_structure.zip) to get you started.
