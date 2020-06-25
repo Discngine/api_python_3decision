@@ -43,17 +43,17 @@ class Session():
         self.api_base_url   = settings['base_url'] + settings['api_path']
         self.auth_type      = settings['auth_type']
         self.mail           = settings['mail']
+        self.verifySSL      = settings['verifySSL']
         if self.auth_type == 'on_prem':
             self.user           = settings['user']
             self.password       = settings['password']
-            self.verifySSL      = settings['verifySSL']
         else:
             self.x_api_secret   = settings['x_api_secret']
         
     def on_prem_authentication(self):
         response = self.req.post(
                 url = self.api_base_url + self.login_endpoint,
-                verify=self.verifySSL,
+                verify = self.verifySSL,
                 data = {'username':self.user},
                 auth = requests.auth.HTTPBasicAuth(self.user, self.password)
         )
@@ -67,6 +67,7 @@ class Session():
         print('Generating token ...')
         response = self.req.get(
             url = self.api_base_url + self.token_endpoint, 
+            verify = self.verifySSL,
             headers = {'x-api-secret' : self.x_api_secret}
         )
         status_code = response.status_code     
