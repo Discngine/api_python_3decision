@@ -65,3 +65,7 @@ response = api.get_ligand_search('exact', 'smiles', 'CCCCn1c(Cc2cc(OC)c(OC)c(OC)
 ## Post Structure Endpoint
 In order to register one or several structures you can use the post_structure function. You should specify a zip file containing all information required for such an upload. More information on how the specifications of that zip file can be found in the [3decision API documentation here](https://discngine.github.io/3decision-api-doc/v2/POST%20Structure%20Documentation.pdf). 
 You can also download a [sample zip file](https://github.com/Discngine/api_python_3decision/blob/master/examples/post_structure.zip) to get you started.
+
+When using the example archive, you will need to unzip it, change the user specified in the CREATED BY field by your own username, and rebuild the archive. Make sure to have the configuration file at the root of the archive :
+![Copy key](https://github.com/Discngine/api_python_3decision/blob/master/images/archive.jpg "Archive schema example")
+More [documentation](https://discngine.github.io/3decision-api-doc/v2/POST%20Structure%20Documentation.pdf) on the POST Struture endpoint and archive format is available 
