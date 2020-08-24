@@ -24,20 +24,20 @@ WORKDIR /usr/src/app/api_python_3decision
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-#set symlinks to configuration files
+#set symlinks to start/configuration files
 RUN mkdir /3dec_api_runtime
 RUN touch /3dec_api_runtime/settings.py
 RUN touch /3dec_api_runtime/3decision_commands.py
-RUN ls -lh /3dec_api_runtime
 RUN rm settings.py
 RUN ln -s /3dec_api_runtime/settings.py settings.py
-RUN ls -lh
 
 WORKDIR /usr/src/app
 #install certificate
 RUN gnutls-cli --print-cert 3decision.discngine.cloud:443 </dev/null| sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > 3decision.discngine.cloud.crt
 ENV REQUESTS_CA_BUNDLE=/usr/src/app/3decision.discngine.cloud.crt
 
+#link python script to working folder
 RUN ln -s /3dec_api_runtime/3decision_commands.py 3decision_commands.py
+#set python path for library import
 ENV PYTHONPATH "${PYTHONPATH}:`pwd`"
 CMD [ "python", "./3decision_commands.py" ]
