@@ -60,6 +60,7 @@ class Session():
         if response.status_code == 200:
             print("Logged in")
         else:
+            print(response.text)
             print("Error login in")
         
                
