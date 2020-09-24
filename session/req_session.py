@@ -97,3 +97,6 @@ class Session():
     def print_error_message(self, response):
         error = response.json()['error']
         print('\nError message:\t\t' + error['message'] + '\n' + 'Status Code:\t\t' + str(error['code']) + '\n' + 'Type:\t\t\t' + error['type'] + '\n')
+        if 'details' in error:
+            for detailled_error in error['details']:
+                print('\nDetailed Error: \t' + detailled_error['message'] + '\n' + 'Status Code:\t\t' + str(detailled_error['code']) + '\n')
