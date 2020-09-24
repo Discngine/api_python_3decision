@@ -83,7 +83,7 @@ def _search_structure_by_anotation(session, annotation_type:  str, annotation_va
     url = session.api_base_url + endpoint_path
     url = url.replace(':annotationType', annotation_type)
     url = url.replace(':annotation', annotation_value)
-    response = session.req.delete(url)
+    response = session.req.get(url)
     if response.status_code > 202:
         session.print_error_message(response)
     return response 
