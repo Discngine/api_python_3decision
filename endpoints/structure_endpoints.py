@@ -77,6 +77,16 @@ def _delete_structure(session, code : str):
         session.print_error_message(response)
     return response 
     
+def _search_structure_by_anotation(session, annotation_type:  str, annotation_value: str):
+    session.check_token_expiration()
+    endpoint_path = '/structure/search/annotation/:annotationType/:annotation/metadata'
+    url = session.api_base_url + endpoint_path
+    url = url.replace(':annotationType', annotation_type)
+    url = url.replace(':annotation', annotation_value)
+    response = session.req.delete(url)
+    if response.status_code > 202:
+        session.print_error_message(response)
+    return response 
     
     
     

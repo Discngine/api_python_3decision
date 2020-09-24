@@ -32,7 +32,10 @@ def post_structure(archive : str):
 
 def delete_structure(code : str):
     return e.structure_endpoints._delete_structure(session, code)
-    
+
+def search_structure_annotation(annotation_type: str, annotation_value : str):
+    return e.structure_endpoints._search_structure_by_anotation(session, annotation_type, annotation_value)
+
 
 # Project Endpoints
 

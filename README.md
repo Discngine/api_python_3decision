@@ -13,6 +13,7 @@ Here an example to access the 3decision public cloud server:
 ```
     params = {
         'base_url'      : 'https://3decision.discngine.cloud',
+        'api_path'      : '/api/v2',
         'auth_type'     : 'cloud',
         'x_api_secret'  : 'myFancySecretKeyIgotFrom3decisionForCloudAuthentication',
         'mail'          : 'my_mail@mail.com',
