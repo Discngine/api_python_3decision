@@ -10,6 +10,7 @@ def _get_project_ids(session, project_name : str):
     get_project_id_endpoint = '/project/:name/ids'
     url = session.api_base_url + get_project_id_endpoint
     url = url.replace(':name', project_name)
+    print("IN GET PROJECT IDS", project_name)
     response = session.req.get(url)
     if response.status_code > 202:
         session.print_error_message(response)

@@ -1,0 +1,3 @@
+ID,Import_Date,Status
+1uyd.pdb.gz,25/08/2020,ok
+5fpzalexcif.gz,03/09/2020,ok
