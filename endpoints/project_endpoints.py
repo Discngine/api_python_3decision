@@ -19,7 +19,7 @@ def _get_project(session, project_id : int):
     session.check_token_expiration()
     get_project_id_endpoint = '/project/:id?metadataType=general, users, structures, customTransformations'
     url = session.api_base_url + get_project_id_endpoint
-    url = url.replace(':id', project_id)
+    url = url.replace(':id', str(project_id))
     response = session.req.get(url)
     if response.status_code > 200:
         session.print_error_message(response)

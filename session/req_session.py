@@ -33,13 +33,15 @@ class Session():
     token          = str
     verifySSL      = bool
     sec_exp_check  = 10
-    expires        = datetime
-    req            = requests.Session()
+    #expires        = datetime
+    #req            = requests.Session()
     
     token_endpoint = '/token'
     login_endpoint = '/login'
     
     def __init__(self, settings):
+        self.expires = datetime
+        self.req = requests.Session()
         self.api_base_url   = settings['base_url'] + settings['api_path']
         self.auth_type      = settings['auth_type']
         self.mail           = settings['mail']
