@@ -12,14 +12,15 @@ adapt the `settings.py` with your data.
 Here an example to access the 3decision public cloud server:
 ```
     params = {
-        'base_url'      : 'https://3decision.discngine.cloud',
-        'api_path'      : '/api/v2',
-        'auth_type'     : 'cloud',
-        'x_api_secret'  : 'myFancySecretKeyIgotFrom3decisionForCloudAuthentication',
-        'mail'          : 'my_mail@mail.com',
-        'user'          : 'myUsername',
-        'password'      : 'passwordForOnPremInstallationsOnly',
-        'verifySSL'     : True
+        'base_url'          : 'https://3decision.discngine.cloud',
+        'api_path'          : '/api/v2',
+        'internal_api_path' : '/internal/api', 
+        'auth_type'         : 'cloud',
+        'x_api_secret'      : 'myFancySecretKeyIgotFrom3decisionForCloudAuthentication',
+        'mail'              : 'my_mail@mail.com',
+        'user'              : 'myUsername',
+        'password'          : 'passwordForOnPremInstallationsOnly',
+        'verifySSL'         : True
     }
 ```
 
@@ -70,3 +71,8 @@ You can also download a [sample zip file](https://github.com/Discngine/api_pytho
 When using the example archive, you will need to unzip it, change the user specified in the CREATED BY field by your own username, and rebuild the archive. Make sure to have the configuration file at the root of the archive :
 
 ![Copy key](https://github.com/Discngine/api_python_3decision/blob/master/images/archive.jpg "Archive schema example")
+
+# Make a Python package
+From folder where settings.py lives
+pip install wheel
+pip install .
