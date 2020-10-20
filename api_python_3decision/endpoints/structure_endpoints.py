@@ -48,6 +48,16 @@ def _get_viewable_structures_by_id(session, user_id : int, structure_ids : list)
         session.print_error_message(response)
     return response     
 
+def _get_viewable_structures_by_external_code(session, user_id : int, external_codes : list):
+    session.check_token_expiration()
+    endpoint_path = '/structure/code/user/:user_id/canview'
+    url = session.api_base_internal_url + endpoint_path
+    url = url.replace(':user_id', user_id)
+    response = session.req.get(url = url, data = {'structure' : external_codes})
+    if response.status_code > 202:
+        session.print_error_message(response)
+    return response     
+
 def _put_reanalyze_structure(session, code : str):
     session.check_token_expiration()
     endpoint_path = '/structure/:code/reanalyze'
