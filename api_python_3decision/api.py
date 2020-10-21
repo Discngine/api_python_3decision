@@ -26,12 +26,6 @@ def get_structure_metadata(code: str, session = default_session):
 def get_structure_ligands(code: str, session = default_session):
     return e.structure_endpoints._get_structure_ligands(session, code)
 
-def get_viewable_structures_by_id(user_id : int, structure_ids : list, session = default_session):
-    return e.structure_endpoints._get_viewable_structures_by_id(session, user_id, structure_ids)
-
-def get_viewable_structures_by_external_code(user_id : int, external_codes : list, session = default_session):
-    return e.structure_endpoints._get_viewable_structures_by_external_code(session, user_id, external_codes)
-
 def reanalyze_structure(code: str, session = default_session):
     return e.structure_endpoints._put_reanalyze_structure(session, code)
 

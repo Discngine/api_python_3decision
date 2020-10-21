@@ -10,14 +10,13 @@
 # api_path_example: /api/v2
 
 params = {
-    'base_url'          : 'https://vm3decdv02.discngine.com:9003',
-    'api_path'          : '/api/v2', 
-    'internal_api_path' : '/internal/api', 
-    'auth_type'         : 'on_prem',
+    'base_url'          : '',
+    'api_path'          : '', 
+    'auth_type'         : '',
     'x_api_secret'      : '',
-    'mail'              : 'ppuser@foo.bar',
-    'user'              : 'ppuser',
-    'password'          : 'ppuser',
+    'mail'              : '',
+    'user'              : '',
+    'password'          : '',
     'verifySSL'         : True
 }
 

@@ -43,7 +43,6 @@ class Session():
         self.expires = datetime
         self.req = requests.Session()
         self.api_base_url           = settings['base_url'] + settings['api_path']
-        self.api_base_internal_url  = settings['base_url'] + settings['internal_api_path']
         self.auth_type              = settings['auth_type']
         self.mail                   = settings['mail']
         self.verifySSL              = settings['verifySSL']
