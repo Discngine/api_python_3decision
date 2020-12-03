@@ -52,3 +52,8 @@ def get_project(project_id : int, session = default_session):
 
 def get_ligand_search(search_type: str, input_type : str, input_value : str, session = default_session):
     return e.ligand_endpoints._ligand_search(session, search_type, input_type, input_value)
+
+# Annotation Endpoints
+
+def post_biomolecule_annotation(data: str, session = default_session):
+    return e.annotation_endpoints._post_biomolecule_annotation(session,data)
