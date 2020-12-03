@@ -57,3 +57,6 @@ def get_ligand_search(search_type: str, input_type : str, input_value : str, ses
 
 def post_biomolecule_annotation(data: str, session = default_session):
     return e.annotation_endpoints._post_biomolecule_annotation(session,data)
+
+def post_biomolecule_annotation_input_type(data: str,input_type: str, input: str, session = default_session):
+    return e.annotation_endpoints._post_biomolecule_annotation_input_type(session,data,input_type,input)

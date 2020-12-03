@@ -4,50 +4,11 @@ import json
 
 class AnnotationTests(unittest.TestCase):
     
-    annotationJson={"biomolecules": [{"general": {"biomoleculeCode": "HS90A_HUMAN"},"annotations": [{"value": {"AnnotationValueString": "test annotation"}}]}]}
-    annotationJson2=json.loads("""
-{
-    "biomolecules": [
-        {
-            "general": {
-                "biomoleculeCode": "HS90A_HUMAN"
-            },
-            "annotations": [
-                {
-                    "value": {
-                        "AnnotationValueString": "test annotation"
-                    },
-                    "type": "User Annotation"
-                }
-            ],
-            "sequences": [
-                {
-                    "sequence": "MPEETQTQDQPMEEEEVETFAFQAEIAQLMSLIINTFYSNKEIFLRELISNSSDALDKIRYESLTDPSKLDSGKELHINLIPNKQDRTLTIVDTGIGMTKADLINNLGTIAKSGTKAFMEALQAGADISMIGQFGVGFYSAYLVAEKVTVITKHNDDEQYAWESSAGGSFTVRTDTGEPMGRGTKVILHLKEDQTEYLEERRIKEIVKKHSQFIGYPITLFVEKERDKEVSDDEAEEKEDKEEEKEKEEKESEDKPEIEDVGSDEEEEKKDGDKKKKKKIKEKYIDQEELNKTKPIWTRNPDDITNEEYGEFYKSLTNDWEDHLAVKHFSVEGQLEFRALLFVPRRAPFDLFENRKKKNNIKLYVRRVFIMDNCEELIPEYLNFIRGVVDSEDLPLNISREMLQQSKILKVIRKNLVKKCLELFTELAEDKENYKKFYEQFSKNIKLGIHEDSQNRKKLSELLRYYTSASGDEMVSLKDYCTRMKENQKHIYYITGETKDQVANSAFVERLRKHGLEVIYMIEPIDEYCVQQLKEFEGKTLVSVTKEGLELPEDEEEKKKQEEKKTKFENLCKIMKDILEKKVEKVVVSNRLVTSPCCIVTSTYGWTANMERIMKAQALRDNSTMGYMAAKKHLEINPDHSIIETLRQKAEADKNDKSVKDLVILLYETALLSSGFSLEDPQTHANRIYRMIKLGLGIDEDDPTADDTSAAVTEEMPPLEGDDDTSRMEEVD",
-                    "annotations": [
-                        {
-                            "value": {
-                                "AnnotationValueString": "test annotation from sequence variant a"
-                            },
-                            "type": "User Annotation"
-                        },
-                        {
-                            "value": {
-                                "AnnotationValueString": "test second annotation from sequence variant a"
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
-    """)
-    annotationJson3=json.loads("""
-    {
+    annotationJson=json.loads("""{
 "biomolecules": [
 {
 "general": {
-"biomoleculeCode": "NOTTHEGOODONE"
+"biomoleculeCode": "HS90A_HUMAN"
 },
 "annotations": [
 {
@@ -78,9 +39,8 @@ class AnnotationTests(unittest.TestCase):
 }
 ]
 }
-
 """)
-    annotationJson4=json.loads("""
+    annotationJson2=json.loads("""
     {
     "biomolecules": [
         {
@@ -210,32 +170,29 @@ class AnnotationTests(unittest.TestCase):
         }
     ]
 }
-
-
-
-
 """)
 
     def tearDown(self):
         pass
 
-
-    def test_biomolecule_annotation(self):
-        """"""
-        response=api.post_biomolecule_annotation(self.annotationJson)
+    def test_biomolecule_annotation_inputtype(self):
+        response=api.post_biomolecule_annotation_input_type(self.annotationJson,input_type='code',input='HS90A_HUMAN')
         self.assertEqual(response.status_code,201)
 
-    def test_biomolecile_annotation_post_2(self):
-        response=api.post_biomolecule_annotation(self.annotationJson2)
+    def test_biomolecule_annotation_inputtype2(self):
+        response=api.post_biomolecule_annotation_input_type(self.annotationJson2,input_type='code',input='HS90A_HUMAN')
         self.assertEqual(response.status_code,201)
 
-    def test_biomolecile_annotation_post_3(self):
-        response=api.post_biomolecule_annotation(self.annotationJson4)
-        self.assertEqual(response.status_code,201)
-        
-    def test_biomolecule_annotation_failing(self):
-        response=api.post_biomolecule_annotation(self.annotationJson3)
+    def test_biomolecule_annotation_inputtype3(self):
+        response=api.post_biomolecule_annotation_input_type(self.annotationJson,input_type='code',input='HS90A_HUMANNNNNN')
         self.assertEqual(response.status_code,500)
+
+    def test_biomolecule_annotation_inputtype4(self):
+        response=api.post_biomolecule_annotation_input_type(self.annotationJson,input_type='nonexistenttype',input='HS90A_HUMAN')
+        self.assertEqual(response.status_code,500)
+
+    
+
 
         
         
