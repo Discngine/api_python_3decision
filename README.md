@@ -75,3 +75,13 @@ When using the example archive, you will need to unzip it, change the user speci
 From folder where settings.py lives
 pip install wheel
 pip install .
+
+# Install the conda environment
+```
+conda env create -f conda_env.yml
+conda activate 3decision_api
+```
+# Running unit tests (for developers only)
+
+Activate your conda environment and run the following command:
+`pytest`

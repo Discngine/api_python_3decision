@@ -1,3 +1,4 @@
 import api_python_3decision.endpoints.structure_endpoints
 import api_python_3decision.endpoints.project_endpoints
 import api_python_3decision.endpoints.ligand_endpoints
+import api_python_3decision.endpoints.annotation_endpoints
