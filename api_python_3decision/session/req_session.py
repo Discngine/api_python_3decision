@@ -46,6 +46,14 @@ class Session():
         self.auth_type              = settings['auth_type']
         self.mail                   = settings['mail']
         self.verifySSL              = settings['verifySSL']
+
+        if ('proxy' in settings):
+            proxies = {}
+            if ('http' in settings['proxy'] and settings['proxy']['http']): proxies['http'] = settings['proxy']['http']
+            if ('https' in settings['proxy'] and settings['proxy']['https']): proxies['https'] = settings['proxy']['https']
+            # Use proxy settings in all session
+            self.req.proxies.update(proxies)
+
         if self.auth_type == 'on_prem':
             self.user               = settings['user']
             self.password           = settings['password']

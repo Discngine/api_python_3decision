@@ -11,13 +11,14 @@
 
 params = {
     'base_url'          : '',
-    'api_path'          : '', 
+    'api_path'          : '/api/v2', 
     'auth_type'         : '',
     'x_api_secret'      : '',
     'mail'              : '',
     'user'              : '',
-    'password'          : '',
-    'verifySSL'         : True
+    'password'          :  '',
+    'verifySSL'         : True,
+    'proxy'             : {'http': '', 'https':''}
 }
 
 
