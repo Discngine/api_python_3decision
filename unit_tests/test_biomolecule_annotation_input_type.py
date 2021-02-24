@@ -41,7 +41,7 @@ class AnnotationTests(unittest.TestCase):
 }
 """)
     annotationJson2=json.loads("""
-    {
+{
     "biomolecules": [
         {
             "general": 
@@ -170,6 +170,8 @@ class AnnotationTests(unittest.TestCase):
         }
     ]
 }
+
+
 """)
 
     def tearDown(self):
@@ -185,11 +187,11 @@ class AnnotationTests(unittest.TestCase):
 
     def test_biomolecule_annotation_inputtype3(self):
         response=api.post_biomolecule_annotation_input_type(self.annotationJson,input_type='code',input='HS90A_HUMANNNNNN')
-        self.assertEqual(response.status_code,500)
+        self.assertEqual(response.status_code,404)
 
     def test_biomolecule_annotation_inputtype4(self):
         response=api.post_biomolecule_annotation_input_type(self.annotationJson,input_type='nonexistenttype',input='HS90A_HUMAN')
-        self.assertEqual(response.status_code,500)
+        self.assertEqual(response.status_code,400)
 
     
 
