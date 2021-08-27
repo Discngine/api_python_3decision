@@ -4,6 +4,8 @@ Created on Mon Jan 20 18:11:19 2020
 
 @author: 3decision
 """
+import requests
+import aiohttp, asyncio
 
 
 def _get_structure(session, code : str):
@@ -46,11 +48,28 @@ def _put_reanalyze_structure(session, code : str):
     response = session.req.put(url)
     if response.status_code > 202:
         session.print_error_message(response)
-    return response 
+    return response
 
+async def send_post_request(session,url,data,timeout):
+    await session.post(url=url,data=data,timeout=timeout)
+
+def background(f):
+    from functools import wraps
+    @wraps(f)
+    def wrapped(*args, **kwargs):
+        loop=asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        if callable(f):
+            return loop.run_in_executor(None, f, *args, **kwargs)
+        else:
+            raise TypeError('Task must be a callable')    
+    return wrapped
+
+@background
 def _post_structure(session, archive_path : str):
     session.check_token_expiration()
     endpoint_path = '/structure'
+    response=None   #default response
     try:
         with open(archive_path, 'rb') as archive:
             response = session.req.post(
@@ -60,8 +79,12 @@ def _post_structure(session, archive_path : str):
             )
             if response.status_code > 202:
                 session.print_error_message(response)
-    except IOError:
-        print("File not found")
+    except requests.exceptions.ConnectionError as e:
+        print("Lost connection to the server, but your job is still running. Please wait for the confirmation mail instead")
+        print(e)
+    except Exception as e:
+        print("Exception")
+        print(e)
     finally:
         archive.close()
     return response

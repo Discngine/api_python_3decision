@@ -13,9 +13,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_session(settings):
     session = Session(settings)
+    
     if session.auth_type == 'on_prem':
         print('Connecting to 3decision... (On Prem)')
-        session.on_prem_authentication()    
+        session.on_prem_authentication()
     else:
         print('Connecting to 3decision... (Cloud)')
         session.cloud_authentication()
@@ -42,6 +43,7 @@ class Session():
     def __init__(self, settings):
         self.expires = datetime
         self.req = requests.Session()
+
         self.api_base_url           = settings['base_url'] + settings['api_path']
         self.auth_type              = settings['auth_type']
         self.mail                   = settings['mail']
