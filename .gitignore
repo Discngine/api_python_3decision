@@ -130,7 +130,5 @@ dmypy.json
 
 
 settings*.py
-poetry.lock
 .vscode
-.vscode/*.json
 /api_python_3decision/settings.py
