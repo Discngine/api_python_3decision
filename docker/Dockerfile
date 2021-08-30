@@ -28,7 +28,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN mkdir /3dec_api_runtime
 RUN touch /3dec_api_runtime/settings.py
 RUN touch /3dec_api_runtime/3decision_commands.py
-RUN rm settings.py
+#RUN rm settings.py
 RUN ln -s /3dec_api_runtime/settings.py settings.py
 
 WORKDIR /usr/src/app

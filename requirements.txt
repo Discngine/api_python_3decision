@@ -1,2 +1,4 @@
 Python>=2.7
 requests>=2.23.0
+aiohttp
+asyncio

@@ -1,1 +1,4 @@
 requests>=2.23.0
+ipdb
+aiohttp
+asyncio
