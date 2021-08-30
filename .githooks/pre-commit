@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# How to use:
+# git config core.hooksPath .githooks
+#
+
+echo "Starting pre-commit hook"
+poetry export -f requirements.txt --output requirements.txt
+echo "Pre-commit hook finished"
