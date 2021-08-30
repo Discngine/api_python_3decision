@@ -235,7 +235,7 @@ class AnnotationTests(unittest.TestCase):
         
     def test_biomolecule_annotation_failing(self):
         response=api.post_biomolecule_annotation(self.annotationJson3)
-        self.assertEqual(response.status_code,500)
+        self.assertEqual(response.status_code,404)
 
         
         

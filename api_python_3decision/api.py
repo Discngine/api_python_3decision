@@ -8,12 +8,12 @@ Created on Tue Jan 21 10:29:49 2020
 import api_python_3decision.settings as settings
 import api_python_3decision.session.req_session as req_session
 import api_python_3decision.endpoints as e
-
+import asyncio
 default_session = req_session.get_session(settings.params)
 
 # Session 
 def create_session():
-    return req_session.get_session(settings.params)
+    return asyncio.run(req_session.get_session(settings.params))
 
 # Structure Endpoints
 
