@@ -128,4 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-/settings.py
+
+settings*.py
+.vscode
+/api_python_3decision/settings.py
